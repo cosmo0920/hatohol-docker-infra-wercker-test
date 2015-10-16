@@ -51,7 +51,7 @@ build:
           libtoolize && autoreconf -i
           scl enable devtoolset-2 "./configure"
           scl enable devtoolset-2 "make -j `cat /proc/cpuinfo | grep processor | wc -l`"
-          scl enable devtoolset-2 "make dist -j `cat /proc/cpuinfo | grep processor | wc -l`"
+          make dist -j `cat /proc/cpuinfo | grep processor | wc -l`
 
     - script:
         name: Build RPM
