@@ -65,3 +65,9 @@ build:
         name: Store built RPMs
         code: |
           cp -R /root/rpmbuild/RPMS/x86_64/*.rpm "$WERCKER_OUTPUT_DIR"
+
+deploy:
+   steps:
+     - script:
+         name: list files
+         code: ls -l ./
