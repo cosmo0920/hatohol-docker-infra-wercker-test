@@ -42,7 +42,7 @@ build:
           git clone https://github.com/project-hatohol/hatohol.git ~/hatohol
           cd ~/hatohol
           git fetch origin
-          git checkout -qf ${WERCKER_GIT_COMMIT:-HEAD}
+          git checkout -qf HEAD # ${WERCKER_GIT_COMMIT:-HEAD} # fix later
 
     - script:
         name: Building Hatohol
