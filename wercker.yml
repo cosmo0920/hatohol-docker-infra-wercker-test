@@ -65,5 +65,5 @@ build:
     - script:
         name: Store built RPMs
         code: |
-          ls /root/rpmbuild/RPMS/x86_64/*.rpm
           cp -R /root/rpmbuild/RPMS/x86_64/*.rpm ${WERCKER_REPORT_ARTIFACTS_DIR}
+          ls ${WERCKER_REPORT_ARTIFACTS_DIR}
