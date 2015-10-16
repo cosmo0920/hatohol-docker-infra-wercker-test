@@ -60,3 +60,8 @@ build:
           cd ~/hatohol
           scl enable devtoolset-2 "MAKEFLAGS=\"-j `cat /proc/cpuinfo | grep processor | wc -l`\" rpmbuild -tb hatohol-*.tar.bz2"
           scl enable devtoolset-2 "gcc --version"
+
+    - script:
+        name: Store built RPMs
+        code: |
+          cp -R /root/rpmbuild/RPMS/x86_64/*.rpm "$WERCKER_OUTPUT_DIR"
