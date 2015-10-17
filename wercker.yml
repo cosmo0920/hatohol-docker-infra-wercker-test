@@ -61,9 +61,9 @@ build:
           scl enable devtoolset-2 "MAKEFLAGS=\"-j `cat /proc/cpuinfo | grep processor | wc -l`\" rpmbuild -tb hatohol-*.tar.bz2"
           scl enable devtoolset-2 "gcc --version"
 
-  after-steps:
-    - script:
-        name: Store built RPMs
-        code: |
-          cp -R /root/rpmbuild/RPMS/x86_64/*.rpm ${WERCKER_REPORT_ARTIFACTS_DIR}
-          ls ${WERCKER_REPORT_ARTIFACTS_DIR}
+  # after-steps:
+  #   - script:
+  #       name: Store built RPMs
+  #       code: |
+  #         cp -R /root/rpmbuild/RPMS/x86_64/*.rpm ${WERCKER_REPORT_ARTIFACTS_DIR}
+  #         ls ${WERCKER_REPORT_ARTIFACTS_DIR}
